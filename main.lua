@@ -7,7 +7,8 @@
 -- -----------------------------------------------------------------------------------
 -- - Created for GrowPai                                                       
 -- - Contributors: arky#0086   (on teohook)
--- - purpl3r0se (for originally making this)                                                       
+-- - purpl3r0se (for originally making this)              
+-- - nabhek (colorMode, sendFunctionlist)                                         
 -- -----------------------------------------------------------------------------------
 
 function dropItem(itemID, count)
@@ -19,21 +20,6 @@ function joinWorld(world)
 	SendPacket(3, "action|join_request\nname|" .. world .. "\ninvitedWorld|0")
 end
 
-function colorMode(bool, PPS)
-local Colors = {1348237567, 1685231359, 2022356223, 2190853119, 2527912447, 2864971775, 3033464831, 3370516479, 3033464831, 2864971775, 2527912447, 2190853119, 2022356223, 1685231359, 1348237567}
-_G.toggle = bool
-if PPS > 100 then
-    print("You cannot have "..PPS.." packets per second, Exceeded the maximum amount(can cause you to get banned / shadowbanned")
- else
- while _G.toggle do Sleep()
-            PPS = 1000 / PPS
-            for index,var in pairs (Colors) do Sleep(PPS)
-SendPacket(2,"action|setSkin\ncolor|"..var)
-end
-end
-end
-end
-	
 function wrenchTile(x, y)
     local pkt = {}
     pkt.type = 3
@@ -99,3 +85,20 @@ placeTile(id, x, y) to place the specific block with the specific tile pos
 sendFunctionList() sends this
 colorMode(bool, PPS) true/false rgb from black to white color, dependable on PPS(Packet per second)]])
 end
+
+function colorMode(bool, PPS)
+local Colors = {1348237567, 1685231359, 2022356223, 2190853119, 2527912447, 2864971775, 3033464831, 3370516479, 3033464831, 2864971775, 2527912447, 2190853119, 2022356223, 1685231359, 1348237567}
+_G.toggle = bool
+if PPS > 100 then
+    print("You cannot have "..PPS.." packets per second, Exceeded the maximum amount(can cause you to get banned / shadowbanned")
+ else
+ while _G.toggle do Sleep()
+            PPS = 1000 / PPS
+            for index,var in pairs (Colors) do Sleep(PPS)
+SendPacket(2,"action|setSkin\ncolor|"..var)
+end
+end
+end
+end
+
+colorMode(true, 30)
