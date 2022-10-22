@@ -20,7 +20,12 @@ joinWorld("start")
 -- This will drop 15 of the specific item specified, in this case itemID 2 is dirt, so this will drop 15 dirt.
 dropItem(2, 15)
 ```
-
+### sendFunctionList
+* params: none
+```lua
+sendFunctionList()
+-- this will show all functions in game
+```
 
 ### Face Side
 * params: (string side)
