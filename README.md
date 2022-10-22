@@ -4,6 +4,9 @@ Originally made by purpl3r0se, ported to growpai by dart
 ## How to use
 To use this, you must copy all of the code from the `main.lua` file and put it at the top of your file.
 
+## Credits
+* Nabhek, Purpl3r0se, Dart, Arky
+
 ## Functions
 
 ### Join World
