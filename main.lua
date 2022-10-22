@@ -19,6 +19,20 @@ function joinWorld(world)
 	SendPacket(3, "action|join_request\nname|" .. world .. "\ninvitedWorld|0")
 end
 
+function colorMode(bool, PPS)
+local Colors = {1348237567, 1685231359, 2022356223, 2190853119, 2527912447, 2864971775, 3033464831, 3370516479, 3033464831, 2864971775, 2527912447, 2190853119, 2022356223, 1685231359, 1348237567}
+_G.toggle = bool
+if PPS > 100 then
+    print("You cannot have "..PPS.." packets per second, Exceeded the maximum amount(can cause you to get banned / shadowbanned")
+ else
+ while _G.toggle do Sleep()
+            PPS = 1000 / PPS
+            for index,var in pairs (Colors) do Sleep(PPS)
+SendPacket(2,"action|setSkin\ncolor|"..var)
+end
+end
+end
+	
 function wrenchTile(x, y)
     local pkt = {}
     pkt.type = 3
