@@ -73,3 +73,14 @@ function placeTile(id, x, y)
     pkt.pos_y = GetLocal().pos_y
     SendPacketRaw(pkt)
 end
+
+function sendFunctionList()
+log([[dropItem(itemID, count), Basically drops(The specific id for the item and the count)
+joinWorld(world), Should warp you to the world you want.
+wrenchTile(x, y), Wrenches the specific tile pos
+faceSide(side), right or left, To side your face
+hitTile(x,y) to punch the specific tile
+placeTile(id, x, y) to place the specific block with the specific tile pos
+sendFunctionList() sends this
+colorMode(bool, PPS) true/false rgb from black to white color, dependable on PPS(Packet per second)]])
+end
