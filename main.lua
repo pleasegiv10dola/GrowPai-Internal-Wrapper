@@ -32,6 +32,7 @@ SendPacket(2,"action|setSkin\ncolor|"..var)
 end
 end
 end
+end
 	
 function wrenchTile(x, y)
     local pkt = {}
