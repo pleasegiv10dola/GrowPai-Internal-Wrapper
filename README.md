@@ -27,6 +27,13 @@ sendFunctionList()
 -- this will show all functions in game
 ```
 
+### colorMode (by nabhek)
+```lua
+colorMode(bool,pps)
+example
+colorMode(true,30) -- any amount of packets per second you'd like
+```
+
 ### Face Side
 * params: (string side)
 * possible sides: "right", "left"
